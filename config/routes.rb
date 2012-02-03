@@ -15,10 +15,6 @@ Rupriman::Application.routes.draw do
       get 'signout' => 'devise/sessions#destroy', :as => :destroy_user_session
   end
 
-  devise_scope :user do
-      get "/login" => "devise/sessions#new"
-  end
-
 
   get "welcome/index"
 
