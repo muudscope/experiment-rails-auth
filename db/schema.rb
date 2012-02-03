@@ -10,13 +10,21 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120126232903) do
+ActiveRecord::Schema.define(:version => 20120127221926) do
 
   create_table "jobs", :force => true do |t|
     t.string   "name"
     t.string   "path"
     t.boolean  "daily"
     t.integer  "priority"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "tasktypes", :force => true do |t|
+    t.string   "name"
+    t.integer  "priority"
+    t.boolean  "active"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -20,8 +20,13 @@ end
 
 gem 'jquery-rails'
 
+
+# Authorization stuff...
 gem 'devise'
 gem "omniauth-facebook"
+
+
+gem 'active_scaffold'
 
 
 # To use ActiveModel has_secure_password
