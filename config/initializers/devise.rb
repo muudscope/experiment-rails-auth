@@ -218,7 +218,12 @@ Devise.setup do |config|
   #config.omniauth :facebook, "175276395833824", "a2382df3ba335156b0ef9b659ad826d6", :scope => 'offline_access,email'
 
   require 'openid/store/filesystem'
-  config.omniauth :open_id, :store => OpenID::Store::Filesystem.new('/tmp'), :name => 'google', :identifier => 'https://www.google.com/accounts/o8/id', :require => 'omniauth-openid'
+  config.omniauth :open_id, 
+                  :store => OpenID::Store::Filesystem.new('/tmp'), 
+                  :name => 'google', 
+                  :identifier => 'https://www.google.com/accounts/o8/id', 
+                  #:identifier => 'https://www.google.com/accounts/o8/site-xrds?hd=banyanbranch.com',
+                  :require => 'omniauth-openid'
 
 
 
