@@ -4,7 +4,7 @@ Rupriman::Application.routes.draw do
     as_routes 
   end
 
-  get '/users/auth/facebook/' => 'devise/sessions#new', :as => :new_user_session
+  get '/users/auth/google/' => 'devise/sessions#new', :as => :new_user_session
   
   devise_for :users, 
              :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }, 

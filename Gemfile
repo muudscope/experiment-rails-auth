@@ -23,7 +23,8 @@ gem 'jquery-rails'
 
 # Authorization stuff...
 gem 'devise'
-gem "omniauth-facebook"
+#gem "omniauth-facebook"
+gem 'omniauth-openid'
 
 
 gem 'active_scaffold'
