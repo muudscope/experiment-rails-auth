@@ -1,7 +1,23 @@
 Rupriman::Application.routes.draw do
-  resources :tasktypes do as_routes end
 
-  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
+  resources :tasktypes do 
+    as_routes 
+  end
+
+  get '/users/auth/facebook/' => 'devise/sessions#new', :as => :new_user_session
+  
+  devise_for :users, 
+             :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }, 
+             :skip => [:sessions] do
+      #get 'signin' => 'devise/sessions#new', :as => :new_user_session
+      #get 'signin' => '/users/auth/facebook/', :as => :new_user_session
+      post 'signin' => 'devise/sessions#create', :as => :user_session
+      get 'signout' => 'devise/sessions#destroy', :as => :destroy_user_session
+  end
+
+  devise_scope :user do
+      get "/login" => "devise/sessions#new"
+  end
 
 
   get "welcome/index"
