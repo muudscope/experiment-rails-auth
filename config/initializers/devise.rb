@@ -221,6 +221,7 @@ Devise.setup do |config|
   config.omniauth :google_apps, 
                   :store => OpenID::Store::Filesystem.new('/tmp'), 
                   :name => 'google', 
+                  :domain => 'banyanbranch.com',
                   :require => 'omniauth-google-apps'
 
 
